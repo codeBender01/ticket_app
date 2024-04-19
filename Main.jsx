@@ -7,10 +7,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Routes from "./screens/Routes";
 import Payment from "./screens/Payment";
+import Settings from "./screens/Settings";
 
 import { useFonts } from "expo-font";
 
-import { FontAwesome5, Entypo } from "@expo/vector-icons";
+import { FontAwesome5, Entypo, Feather } from "@expo/vector-icons";
 
 import * as SplashScreen from "expo-splash-screen";
 
@@ -75,6 +76,16 @@ export default function Main() {
                 <Entypo name="credit-card" size={24} color={color} />
               ),
               tabBarLabel: "Töleg",
+            })}
+          />
+          <Tabs.Screen
+            component={Settings}
+            name="Settings"
+            options={() => ({
+              tabBarIcon: ({ color }) => (
+                <Feather name="settings" size={24} color={color} />
+              ),
+              tabBarLabel: "Düzetmeler",
             })}
           />
         </Tabs.Navigator>

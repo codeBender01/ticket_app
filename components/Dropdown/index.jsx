@@ -5,28 +5,7 @@ import { Entypo } from "@expo/vector-icons";
 
 import colors from "../../constants/colors";
 
-const routes = [
-  {
-    title: "Aşgabat",
-    icon: <Entypo name="location-pin" size={24} color="black" />,
-  },
-  {
-    title: "Mary",
-    icon: <Entypo name="location-pin" size={24} color="black" />,
-  },
-  {
-    title: "Lebap",
-    icon: <Entypo name="location-pin" size={24} color="black" />,
-  },
-  {
-    title: "Daşoguz",
-    icon: <Entypo name="location-pin" size={24} color="black" />,
-  },
-  {
-    title: "Balkan",
-    icon: <Entypo name="location-pin" size={24} color="black" />,
-  },
-];
+
 
 export default function Dropdown({ list }) {
   return (
