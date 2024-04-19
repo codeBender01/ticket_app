@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ChooseRoute from "./ChooseRoute";
 import Schedule from "./Schedule";
 import TicketRegistry from "./TicketRegistry";
+import TicketPurchase from "./TicketPurchase";
 
 import colors from "../../constants/colors";
 
@@ -47,6 +48,20 @@ export default function Routes() {
         }}
         component={TicketRegistry}
         name="TicketRegistry"
+      />
+      <Stack.Screen
+        options={{
+          headerTitle: "Petek",
+          headerStyle: {
+            backgroundColor: colors.mainBlue,
+          },
+          headerTitleStyle: {
+            color: colors.white,
+          },
+          headerTintColor: colors.white,
+        }}
+        component={TicketPurchase}
+        name="TicketPurchase"
       />
     </Stack.Navigator>
   );
