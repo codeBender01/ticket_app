@@ -4,9 +4,37 @@ import Dropdown from "../../components/Dropdown";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import { FontAwesome5, FontAwesome6, AntDesign } from "@expo/vector-icons";
+import {
+  FontAwesome5,
+  FontAwesome6,
+  AntDesign,
+  Entypo,
+} from "@expo/vector-icons";
 
 import colors from "../../constants/colors";
+
+const routes = [
+  {
+    title: "Aşgabat",
+    icon: <Entypo name="location-pin" size={24} color="black" />,
+  },
+  {
+    title: "Mary",
+    icon: <Entypo name="location-pin" size={24} color="black" />,
+  },
+  {
+    title: "Lebap",
+    icon: <Entypo name="location-pin" size={24} color="black" />,
+  },
+  {
+    title: "Daşoguz",
+    icon: <Entypo name="location-pin" size={24} color="black" />,
+  },
+  {
+    title: "Balkan",
+    icon: <Entypo name="location-pin" size={24} color="black" />,
+  },
+];
 
 export default function ChooseRoute() {
   const [passengerCount, setPassengerCount] = useState(1);
@@ -41,11 +69,11 @@ export default function ChooseRoute() {
         >
           <View>
             <Text style={styles.inputLabel}>Nireden?</Text>
-            <Dropdown />
+            <Dropdown list={routes} />
           </View>
           <View>
             <Text style={styles.inputLabel}>Nirä?</Text>
-            <Dropdown />
+            <Dropdown list={routes} />
           </View>
         </View>
       </View>

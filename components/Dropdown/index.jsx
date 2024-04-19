@@ -28,10 +28,10 @@ const routes = [
   },
 ];
 
-export default function Dropdown() {
+export default function Dropdown({ list }) {
   return (
     <SelectDropdown
-      data={routes}
+      data={list}
       renderButton={(selectedItem, isOpened) => {
         return (
           <View style={styles.dropdownButtonStyle}>
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
   dropdownMenuStyle: {
     backgroundColor: "#E9ECEF",
     borderRadius: 8,
+    height: 150,
   },
   dropdownItemStyle: {
     width: "100%",

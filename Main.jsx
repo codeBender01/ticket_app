@@ -6,10 +6,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Routes from "./screens/Routes";
+import Payment from "./screens/Payment";
 
 import { useFonts } from "expo-font";
 
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5, Entypo } from "@expo/vector-icons";
 
 import * as SplashScreen from "expo-splash-screen";
 
@@ -53,7 +54,7 @@ export default function Main() {
             },
             tabBarHideOnKeyboard: true,
             tabBarActiveTintColor: colors.tabBarItemActive,
-            tabBarInactiveTintColor: colors.white,
+            tabBarInactiveTintColor: colors.black,
           }}
         >
           <Tabs.Screen
@@ -64,6 +65,16 @@ export default function Main() {
                 <FontAwesome5 name="route" size={24} color={color} />
               ),
               tabBarLabel: "Ugurlar",
+            })}
+          />
+          <Tabs.Screen
+            component={Payment}
+            name="Payment"
+            options={() => ({
+              tabBarIcon: ({ color }) => (
+                <Entypo name="credit-card" size={24} color={color} />
+              ),
+              tabBarLabel: "Töleg",
             })}
           />
         </Tabs.Navigator>
