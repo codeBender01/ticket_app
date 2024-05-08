@@ -8,7 +8,7 @@ import { FontAwesome5, Entypo, FontAwesome6 } from "@expo/vector-icons";
 
 import colors from "../../constants/colors";
 
-export default function BusTripCard() {
+export default function BusTripCard({ dTime, aTime }) {
   const navigation = useNavigation();
 
   return (
@@ -34,7 +34,7 @@ export default function BusTripCard() {
             gap: 5,
           }}
         >
-          <Text style={styles.timeText}>08:00</Text>
+          <Text style={styles.timeText}>{dTime}</Text>
           <Text>Ashgabat</Text>
         </View>
         <View style={styles.duration}>
@@ -51,7 +51,7 @@ export default function BusTripCard() {
             gap: 5,
           }}
         >
-          <Text style={styles.timeText}>16:00</Text>
+          <Text style={styles.timeText}>{aTime}</Text>
           <Text>Lebap</Text>
         </View>
       </View>

@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import MainPanel from "./MainPanel";
+import TicketHistory from "./TicketHistory";
 
 import colors from "../../constants/colors";
 
@@ -15,6 +16,20 @@ export default function Settings() {
         }}
         name="MainPanel"
         component={MainPanel}
+      />
+      <Stack.Screen
+        options={{
+          headerTitle: "Alnan biletler",
+          headerStyle: {
+            backgroundColor: colors.mainBlue,
+          },
+          headerTitleStyle: {
+            color: colors.white,
+          },
+          headerTintColor: colors.white,
+        }}
+        name="TicketHistory"
+        component={TicketHistory}
       />
     </Stack.Navigator>
   );

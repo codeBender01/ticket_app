@@ -34,16 +34,7 @@ export default function TicketPurchase() {
       </TouchableOpacity>
       <View>
         <Text style={styles.pText}>QR kod:</Text>
-        <View style={{ width: "100%" }}>
-          <Image
-            style={{
-              width: "100%",
-              height: 220,
-            }}
-            resizeMode="contain"
-            source={require("../../assets/qr.jpg")}
-          />
-        </View>
+        <View style={{ width: "100%" }}></View>
       </View>
       <TouchableOpacity
         onPress={() => {

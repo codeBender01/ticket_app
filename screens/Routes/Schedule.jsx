@@ -14,6 +14,24 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 
 import colors from "../../constants/colors";
 
+const trips = [
+  {
+    id: 1,
+    timeOfDeparture: "08:00",
+    timeOfArrival: "16:00",
+  },
+  {
+    id: 2,
+    timeOfDeparture: "10:00",
+    timeOfArrival: "18:00",
+  },
+  {
+    id: 3,
+    timeOfDeparture: "12:00",
+    timeOfArrival: "20:00",
+  },
+];
+
 export default function Schedule() {
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState(new Date());
@@ -49,9 +67,15 @@ export default function Schedule() {
             marginTop: 20,
           }}
         >
-          <BusTripCard />
-          <BusTripCard />
-          <BusTripCard />
+          {trips.map((t) => {
+            return (
+              <BusTripCard
+                key={t.id}
+                aTime={t.timeOfArrival}
+                dTime={t.timeOfDeparture}
+              />
+            );
+          })}
         </View>
       </View>
     </ScrollView>

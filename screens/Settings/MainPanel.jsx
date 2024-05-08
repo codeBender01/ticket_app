@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+
 import {
   AntDesign,
   FontAwesome,
@@ -9,6 +11,8 @@ import {
 import colors from "../../constants/colors";
 
 export default function MainPanel() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.profilePic}>
@@ -47,7 +51,12 @@ export default function MainPanel() {
             Meniň maglumatlarym
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.settingTab}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("TicketHistory");
+          }}
+          style={styles.settingTab}
+        >
           <View>
             <MaterialCommunityIcons
               name="ticket-account"
@@ -63,7 +72,7 @@ export default function MainPanel() {
               },
             ]}
           >
-            Meniň maglumatlarym
+            Alnan biletler
           </Text>
         </TouchableOpacity>
       </View>
