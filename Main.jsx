@@ -28,7 +28,11 @@ export default function Main() {
   });
 
   const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded || fontError) {
+    try {
+      await SplashScreen.preventAutoHideAsync();
+    } catch (e) {
+      console.warn(e);
+    } finally {
       await SplashScreen.hideAsync();
     }
   }, [fontsLoaded, fontError]);
